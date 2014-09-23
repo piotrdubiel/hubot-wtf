@@ -1,5 +1,5 @@
 {
-  "name": "hubot-reaction",
+  "name": "hubot-wtf",
   "description": "replygif.net hubotted",
   "version": "0.0.6",
   "author": "Jake Swanson <jakswa@gmail.com>",
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jakswa/hubot-reaction.git"
+    "url": "git://github.com/piotrdubiel/hubot-wtf.git"
   },
   "bugs": {
-    "url": "https://github.com/jakswa/hubot-reaction/issues"
+    "url": "https://github.com/piotrdubiel/hubot-wtf/issues"
   },
   "dependencies": {
     "coffee-script": "~1.6",
