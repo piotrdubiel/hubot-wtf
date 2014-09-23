@@ -15,7 +15,7 @@ cheerio = require('cheerio')
 format = require('util').format
 
 module.exports = (robot) ->
-  robot.hear /wtf|what the fuck|the fuck|da fuck|/i, (msg) ->
+  robot.hear /wtf|what the fuck|the fuck|da fuck/i, (msg) ->
     getGifs "what-the-fuck", (gifs) ->
       if gifs.length > 0
         ind = Math.floor(Math.random() * gifs.length)
