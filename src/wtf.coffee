@@ -1,5 +1,5 @@
 # Description:
-#   https://github.com/jakswa/hubot-reaction
+#   Just WTF. Fork of https://github.com/jakswa/hubot-reaction
 #
 # Dependencies:
 #   "request"
@@ -8,24 +8,16 @@
 # Configuration:
 #   None
 # 
-# Commands:
-#   !reply tag - returns reaction gif from replygif.net, with that tag
-# 
 # Author:
 #   jakswa 
 request = require('request')
 cheerio = require('cheerio')
 format = require('util').format
+
 module.exports = (robot) ->
-  robot.parseReplyGifTag = (text) ->
-    text.toLowerCase().replace(/[^\w \-]+/g, '').replace(/--+/g, '').replace(/\ /g, '-')
-  robot.hear /^!reply (.+)$/, (msg) ->
-    tag = robot.parseReplyGifTag msg.match[1]
-    getGifs tag, (gifs) ->
-      if gifs.length == 0
-        errorMsg = "no gifs for '#{tag}' -- probably invalid category/tag"
-        robot.send {user: {name: msg.message.user}}, errorMsg
-      else
+  robot.hear /wtf|what the fuck|the fuck|da fuck|/i, (msg) ->
+    getGifs "what-the-fuck", (gifs) ->
+      if gifs.length > 0
         ind = Math.floor(Math.random() * gifs.length)
         msg.send gifs.eq(ind).attr('src').replace('thumbnail', 'i')
 
